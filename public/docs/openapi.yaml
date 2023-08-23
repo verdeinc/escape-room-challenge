@@ -1,0 +1,371 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/escape-rooms:
+    get:
+      summary: 'Display a listing of Escape Rooms.'
+      operationId: displayAListingOfEscapeRooms
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  Status: true
+                  Escape_Rooms_Lists:
+                    -
+                      id: 1
+                      theme: soluta
+                      max_participants: 4
+                      created_at: '2023-08-23T11:28:00.000000Z'
+                      updated_at: '2023-08-23T11:28:00.000000Z'
+                properties:
+                  Status:
+                    type: boolean
+                    example: true
+                  Escape_Rooms_Lists:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        theme: soluta
+                        max_participants: 4
+                        created_at: '2023-08-23T11:28:00.000000Z'
+                        updated_at: '2023-08-23T11:28:00.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        theme:
+                          type: string
+                          example: soluta
+                        max_participants:
+                          type: integer
+                          example: 4
+                        created_at:
+                          type: string
+                          example: '2023-08-23T11:28:00.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-08-23T11:28:00.000000Z'
+      tags:
+        - Endpoints
+      security: []
+  '/api/escape-rooms/{id}':
+    get:
+      summary: 'Display the specified Escape Room.'
+      operationId: displayTheSpecifiedEscapeRoom
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  Status: true
+                  Escape_Room:
+                    id: 1
+                    theme: soluta
+                    max_participants: 4
+                    created_at: '2023-08-23T11:28:00.000000Z'
+                    updated_at: '2023-08-23T11:28:00.000000Z'
+                properties:
+                  Status:
+                    type: boolean
+                    example: true
+                  Escape_Room:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      theme:
+                        type: string
+                        example: soluta
+                      max_participants:
+                        type: integer
+                        example: 4
+                      created_at:
+                        type: string
+                        example: '2023-08-23T11:28:00.000000Z'
+                      updated_at:
+                        type: string
+                        example: '2023-08-23T11:28:00.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the escape room.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/escape-rooms/{id}/time-slots':
+    get:
+      summary: 'Display a listing of Time Slots.'
+      operationId: displayAListingOfTimeSlots
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: true
+                  time_slots:
+                    -
+                      id: 1
+                      escape_room_id: 1
+                      start_time: '1984-10-26 06:56:45'
+                      end_time: '1973-08-01 08:45:08'
+                      participants_count: 0
+                      created_at: '2023-08-23T11:28:00.000000Z'
+                      updated_at: '2023-08-23T11:28:00.000000Z'
+                    -
+                      id: 2
+                      escape_room_id: 1
+                      start_time: '1973-10-27 16:30:31'
+                      end_time: '1999-12-14 06:15:39'
+                      participants_count: 0
+                      created_at: '2023-08-23T11:28:00.000000Z'
+                      updated_at: '2023-08-23T11:28:00.000000Z'
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  time_slots:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        escape_room_id: 1
+                        start_time: '1984-10-26 06:56:45'
+                        end_time: '1973-08-01 08:45:08'
+                        participants_count: 0
+                        created_at: '2023-08-23T11:28:00.000000Z'
+                        updated_at: '2023-08-23T11:28:00.000000Z'
+                      -
+                        id: 2
+                        escape_room_id: 1
+                        start_time: '1973-10-27 16:30:31'
+                        end_time: '1999-12-14 06:15:39'
+                        participants_count: 0
+                        created_at: '2023-08-23T11:28:00.000000Z'
+                        updated_at: '2023-08-23T11:28:00.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        escape_room_id:
+                          type: integer
+                          example: 1
+                        start_time:
+                          type: string
+                          example: '1984-10-26 06:56:45'
+                        end_time:
+                          type: string
+                          example: '1973-08-01 08:45:08'
+                        participants_count:
+                          type: integer
+                          example: 0
+                        created_at:
+                          type: string
+                          example: '2023-08-23T11:28:00.000000Z'
+                        updated_at:
+                          type: string
+                          example: '2023-08-23T11:28:00.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the escape room.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/login:
+    post:
+      summary: ''
+      operationId: postApiLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: dominic.hauck@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: '1#XYC1Wh6)S'
+              required:
+                - email
+                - password
+      security: []
+  /api/register:
+    post:
+      summary: ''
+      operationId: postApiRegister
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: assumenda
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: bosco.janessa@example.com
+                password:
+                  type: string
+                  description: 'Must be at least 6 characters.'
+                  example: '`HFZB:9i[a}V(58DD'
+                date_of_birth:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2023-08-23T11:41:14'
+              required:
+                - name
+                - email
+                - password
+                - date_of_birth
+      security: []
+  /api/logout:
+    post:
+      summary: ''
+      operationId: postApiLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/bookings:
+    post:
+      summary: 'Store a new Booking.'
+      operationId: storeANewBooking
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    get:
+      summary: 'Display a listing Bookings.'
+      operationId: displayAListingBookings
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  message: Unauthenticated
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Unauthenticated
+      tags:
+        - Endpoints
+      security: []
+  '/api/bookings/{id}':
+    delete:
+      summary: 'Delete a Booking.'
+      operationId: deleteABooking
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the booking.'
+        example: vel
+        required: true
+        schema:
+          type: string
+  /api/profile:
+    get:
+      summary: ''
+      operationId: getApiProfile
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  status: false
+                  message: Unauthenticated
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: Unauthenticated
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
