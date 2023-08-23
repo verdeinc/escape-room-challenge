@@ -16,7 +16,7 @@ Welcome to the Escape Room Booking API! This API allows users to browse availabl
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/escape-room-booking-api.git
+   git clone https://github.com/sougmi/escape-room-challenge.git
 
 2. **Navigate to the project directory:**
 
